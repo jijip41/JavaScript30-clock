@@ -5,7 +5,7 @@ body {
   background-attachment: fixed;
 }
 
-.clock-body {
+.clock-face {
   position: relative;
   width: 300px;
   height: 300px;
@@ -14,26 +14,45 @@ body {
   margin: 80px auto;
 }
 
+.hand {
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0, 1.1, 0.3, 1.32);
+  transform: rotate(90deg);
+  border-radius: 50%;
+}
+
 .hour {
   position: absolute;
   top: 50%;
   right: 50%;
-  border: 3px solid black;
+  border: 3px solid rgb(58, 58, 71);
   width: 30%;
+  transform: translateY(-50%);
+  transform-origin: 50% 100%;
+  transform-origin: 100%;
+  z-index: 3;
+  border-bottom-right-radius: 25%;
+  border-bottom-left-radius: 25%;
 }
 
 .min {
   position: absolute;
   top: 50%;
   right: 50%;
-  border: 2px solid black;
+  border: 2px solid rgb(77, 74, 228);
   width: 35%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transform-origin: 100%;
 }
 
 .sec {
   position: absolute;
   top: 50%;
   right: 50%;
-  border: 1px solid black;
+  border: 1px solid rgb(243, 59, 59);
   width: 40%;
+  transform: translateY(-50%);
+  z-index: 1;
+  transform-origin: 100%;
 }
